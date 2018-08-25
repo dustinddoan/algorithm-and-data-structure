@@ -14,10 +14,12 @@ function validate(node, min = null, max = null) {
     return false;
   }
 
+  // compare left node to the current node to make sure it < max = node.data
   if (node.left && !validate(node.left, min, node.data)) {
     return false;
   }
 
+  // compare right node to current node to make sure it > min = node.data
   if (node.right && !validate(node.right, node.data, max)) {
     return false;
   }
